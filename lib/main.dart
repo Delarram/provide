@@ -1,8 +1,14 @@
 import 'package:easyapproach/view/my_home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'models/todo_model.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+       ChangeNotifierProvider(
+         create: (_)=> TodoModel(),
+           child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
