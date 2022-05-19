@@ -1,3 +1,4 @@
+import 'package:easyapproach/setting/setting_page.dart';
 import 'package:easyapproach/view/my_home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const MySetting(),
     );
   }
 }

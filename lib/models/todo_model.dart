@@ -20,8 +20,11 @@ class TodoModel extends ChangeNotifier {
     notifyListeners();
   }
    remove(){
-   taskList.remove("");
-    notifyListeners();
+    if(taskList.isEmpty){
+      return ;
+    }
+   taskList.removeAt(taskList.length-1);
+   notifyListeners();
     }
 
 }

@@ -23,6 +23,7 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       body: Column(
+        mainAxisSize: MainAxisSize.max,
         children: [
           SizedBox(
             width: double.infinity,
@@ -30,7 +31,7 @@ class MyHomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children:  const <Widget>[
                 SizedBox(
                   height: 20,
                 ),
@@ -54,6 +55,7 @@ class MyHomePage extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
+
           Expanded(
             child: Container(
               width: double.infinity,
@@ -62,58 +64,61 @@ class MyHomePage extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50),
-                      topRight: Radius.circular(50))),
+                      topRight: Radius.circular(50),
+                      bottomRight: Radius.circular(20),
+                      bottomLeft: Radius.circular(20)
+                  )
+              ),
               child: Consumer<TodoModel>(
                 builder: ((context, todo, child) => Padding(
-                  padding: const EdgeInsets.only(top: 60),
+                  padding: const EdgeInsets.only(top: 40),
                   child: ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      shrinkWrap: true,
                       padding: EdgeInsets.only(bottom: 100),
                       itemCount: todo.taskList.length,
                       itemBuilder: (context, index) => Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                CircleAvatar(
-                                  backgroundImage: AssetImage("assets/earth.png"),
-                                  backgroundColor: Colors.transparent,
-                                  radius: 35,
-                                  onBackgroundImageError: (e, s) {
-                                    debugPrint('image issue, $e,$s');
-                                  },
-                                ),
-                                SizedBox(
-                                  width: 30,
-                                ),
-                                Expanded(
-                                  child: ListTile(
-                                    title: Text(
-                                      "This is todo ${todo.taskList[index].title}",
-                                      style: const TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    subtitle: Text(
-                                      "This is todo ${todo.taskList[index].detail}",
-                                      style: const TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    trailing: Icon(
-                                      Icons.check_circle,
-                                      color: Colors.greenAccent,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                        padding: const EdgeInsets.all(15.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage("assets/earth.png"),
+                              backgroundColor: Colors.transparent,
+                              radius: 35,
+                              onBackgroundImageError: (e, s) {
+                                debugPrint('image issue, $e,$s');
+                              },
                             ),
-                          )),
+                            const SizedBox(
+                              width: 30,
+                            ),
+                            Expanded(
+                              child: ListTile(
+                                title: Text(
+                                  "This is todo ${todo.taskList[index].title}",
+                                  style: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                subtitle: Text(
+                                  "This is todo ${todo.taskList[index].detail}",
+                                  style: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                trailing: const Icon(
+                                  Icons.check_circle,
+                                  color: Colors.greenAccent,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )),
                 )),
               ),
             ),
           ),
+
         ],
       ),
       floatingActionButton: Row(
@@ -124,7 +129,7 @@ class MyHomePage extends StatelessWidget {
               Provider.of<TodoModel>(context, listen: false).reset();
             },
             backgroundColor: Colors.lightBlue[900],
-            child: Icon(
+            child: const Icon(
               Icons.exposure_zero_rounded,
               color: Colors.white,
               size: 30,
@@ -138,7 +143,7 @@ class MyHomePage extends StatelessWidget {
               Provider.of<TodoModel>(context, listen: false).addTaskInList();
             },
             backgroundColor: Colors.lightBlue[900],
-            child: Icon(
+            child: const Icon(
               Icons.add,
               color: Colors.white,
               size: 30,
@@ -153,7 +158,7 @@ class MyHomePage extends StatelessWidget {
               print("hello");
             },
             backgroundColor: Colors.lightBlue[900],
-            child: Icon(
+            child: const Icon(
               Icons.remove,
               color: Colors.white,
               size: 30,
