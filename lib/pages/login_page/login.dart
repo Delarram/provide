@@ -1,3 +1,4 @@
+import 'package:easyapproach/pages/login_page/dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:easyapproach/constant/constant_textStyle.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -73,6 +74,7 @@ class MyLoginPage extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
+                    onTap: ()=> showLoaderDialog(context),
                     child: Container(
                       alignment: Alignment.center,
                       width: 250,
@@ -106,3 +108,4 @@ class MyLoginPage extends StatelessWidget {
     ));
   }
 }
+
