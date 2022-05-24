@@ -15,7 +15,7 @@ class MyLoginPage extends StatelessWidget {
       child: SizedBox(
         width: width,
         height: height,
-        child: Center(
+        child: Flexible(
           child: Container(
             width: width,
             margin: const EdgeInsets.symmetric(vertical: 200, horizontal: 20),
