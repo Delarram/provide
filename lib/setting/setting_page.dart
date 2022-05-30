@@ -1,6 +1,5 @@
-import 'package:easyapproach/widget/textview/text_view.dart';
+
 import 'package:flutter/material.dart';
-import 'package:easyapproach/constant/constant_textStyle.dart' as constant;
 import 'package:easyapproach/widget/neo_text.dart';
 
 class MySetting extends StatelessWidget {
@@ -54,8 +53,7 @@ class MySetting extends StatelessWidget {
                     border: Border.all(color: Colors.teal),
                     image: const DecorationImage(
                         image: AssetImage("images/punam.jpeg"),
-                        fit: BoxFit.cover)
-                ),
+                        fit: BoxFit.cover)),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,11 +109,10 @@ class MySetting extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       mainAxisSize: MainAxisSize.max,
-                      children:  [
+                      children: [
                         SizedBox(
                           height: 20,
                         ),
-
                       ],
                     ),
                   ),

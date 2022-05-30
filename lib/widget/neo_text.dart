@@ -17,13 +17,18 @@ class NeoText extends StatelessWidget {
      });
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-    fontSize: size,
-    fontWeight: fontWeight,
-    color: color,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10)
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+      fontSize: size,
+      fontWeight: fontWeight,
+      color: color,
 
+        ),
       ),
     );
   }
